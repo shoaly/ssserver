@@ -27,9 +27,6 @@ RUN wget --no-check-certificate https://github.com/breakwa11/shadowsocks/archive
 
 WORKDIR ~/shadowsocks
 
-RUN cp apiconfig.py userapiconfig.py \
-    && cp config.json user-config.json \
-    && cp mysql.json usermysql.json
 
 CMD python server.py -p $SERVER_PORT -k $PASSWORD -m $METHOD  -O auth_sha1_v4 -o $PLUGIN
 
