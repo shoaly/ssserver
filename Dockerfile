@@ -28,5 +28,4 @@ RUN wget --no-check-certificate https://github.com/breakwa11/shadowsocks/archive
 WORKDIR ~/shadowsocks
 
 
-CMD python server.py -p $SERVER_PORT -k $PASSWORD -m $METHOD  -O auth_sha1_v4 -o $PLUGIN
-
+CMD python ~/shadowsocks/server.py -p $SERVER_PORT -k $PASSWORD -m $METHOD  -O auth_sha1_v4 -o $PLUGIN
