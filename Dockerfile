@@ -10,8 +10,8 @@ ENV DNS_ADDR    8.8.8.8
 ENV DNS_ADDR_2  8.8.4.4
 
 
-RUN apk add --update \
-    python \
+RUN apk update \
+    && apk add python \
     libsodium \
     unzip \
     wget \
@@ -31,5 +31,5 @@ RUN cp apiconfig.py userapiconfig.py \
     && cp config.json user-config.json \
     && cp mysql.json usermysql.json
 
-CMD python server.py -p $SERVER_PORT -k $PASSWORD -m $METHOD  -O auth_sha1_v4 -o http_simple
+CMD python server.py -p $SERVER_PORT -k $PASSWORD -m $METHOD  -O auth_sha1_v4 -o $PLUGIN
 
