@@ -29,4 +29,4 @@ RUN wget --no-check-certificate https://github.com/breakwa11/shadowsocks/archive
 WORKDIR ~/shadowsocks
 
 
-CMD python ~/shadowsocks/server.py -p $SERVER_PORT -k $PASSWORD -m $METHOD  -O $PROTOCOL -o $PLUGIN
+CMD python ~/shadowsocks/server.py -p $SERVER_PORT -k $PASSWORD -m $METHOD  -O $PROTOCOL -o $OBFS
