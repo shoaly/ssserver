@@ -5,8 +5,11 @@
 - python server.py -p 443 -k password -m aes-256-cfb -O origin -o http_simple
 - 说明：-p 端口 -k 密码  -m 加密方式 -O 协议插件 -o 混淆插件
 - https://bit.no.com:43110/shadowsocksr.bit
-## 正式版本:
-docker run -d --name ssserver  -e METHOD=chacha20 -e PASSWORD=123456 -p 58338:8388 --restart always shoaly/ssserver
+## 正式版本 
+- ss : docker run -d --name ssserver  -e METHOD=chacha20 -e PASSWORD=123456 -p 58338:8388 --restart always shoaly/ssserver:master
+- ssr : docker run -it --rm --name ssr -e PASSWORD=123456 -e SERVER_PORT=51348 -p 51348:51348 shoaly/sserver:ssr 
+ 
+
 
 ## 更多说明
 
