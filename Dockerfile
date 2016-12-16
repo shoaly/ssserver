@@ -1,11 +1,11 @@
 FROM alpine
 
 ENV SERVER_ADDR 0.0.0.0
-ENV SERVER_PORT 8388
+ENV SERVER_PORT 51348
 ENV PASSWORD=
 ENV METHOD      aes-256-cfb
-ENV PROTOCAL    origin
-ENV PLUGIN      http_simple
+ENV PROTOCOL    origin
+ENV OBFS      http_simple
 ENV TIMEOUT     300
 ENV DNS_ADDR    8.8.8.8
 ENV DNS_ADDR_2  8.8.4.4
@@ -29,4 +29,4 @@ RUN wget --no-check-certificate https://github.com/breakwa11/shadowsocks/archive
 WORKDIR ~/shadowsocks
 
 
-CMD python ~/shadowsocks/server.py -p $SERVER_PORT -k $PASSWORD -m $METHOD  -O $PROTOCAL -o $PLUGIN
+CMD python ~/shadowsocks/server.py -p $SERVER_PORT -k $PASSWORD -m $METHOD  -O $PROTOCOL -o $PLUGIN
