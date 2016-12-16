@@ -4,6 +4,7 @@ ENV SERVER_ADDR 0.0.0.0
 ENV SERVER_PORT 8388
 ENV PASSWORD=
 ENV METHOD      aes-256-cfb
+ENV PROTOCAL    origin
 ENV PLUGIN      http_simple
 ENV TIMEOUT     300
 ENV DNS_ADDR    8.8.8.8
@@ -28,4 +29,4 @@ RUN wget --no-check-certificate https://github.com/breakwa11/shadowsocks/archive
 WORKDIR ~/shadowsocks
 
 
-CMD python ~/shadowsocks/server.py -p $SERVER_PORT -k $PASSWORD -m $METHOD  -O auth_sha1_v4 -o $PLUGIN
+CMD python ~/shadowsocks/server.py -p $SERVER_PORT -k $PASSWORD -m $METHOD  -O $PROTOCAL -o $PLUGIN
